@@ -1,0 +1,12 @@
+{
+  "name" : "employees",
+  "version" : "1.0",
+  "description" : "Retrieve a list of employees",
+  "main" : "employees.js",
+  "oracleMobile" : {
+    "dependencies" : {
+      "apis" : { },
+      "connectors" : { }
+    }
+  }
+}

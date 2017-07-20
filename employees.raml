@@ -1,0 +1,101 @@
+#%RAML 0.8
+title: Employees_AR
+version: 1.0
+baseUri: /mobile/custom/employees
+protocols: [HTTPS]
+mediaType: "application/json"
+schemas:
+  - employees: |
+      {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "id": "http://jsonschema.net",
+        "type": "object",
+        "properties": {
+          "employees": {
+            "id": "http://jsonschema.net/employees",
+            "type": "array",
+            "items": {
+              "id": "http://jsonschema.net/employees/0",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "http://jsonschema.net/employees/0/id",
+                  "type": "integer"
+                },
+                "firstname": {
+                  "id": "http://jsonschema.net/employees/0/firstname",
+                  "type": "string"
+                },
+                "lastname": {
+                  "id": "http://jsonschema.net/employees/0/lastname",
+                  "type": "string"
+                },
+                "email": {
+                  "id": "http://jsonschema.net/employees/0/email",
+                  "type": "string"
+                },
+                "hiredt": {
+                  "id": "http://jsonschema.net/employees/0/hiredt",
+                  "type": "string"
+                },
+                "salary": {
+                  "id": "http://jsonschema.net/employees/0/salary",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "firstname",
+                "lastname",
+                "email",
+                "hiredt",
+                "salary"
+              ]
+            },
+            "required": [
+              "0"
+            ]
+          }
+        },
+        "required": [
+          "employees"
+        ]
+      }
+      
+/list:
+  get:
+    protocols: [HTTPS]
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                  "employees":
+                     [
+                       {
+                         "id": 100,
+                         "firstname": "Avaneesh",
+                         "lastname": "Ramprasad",
+                         "email" : "avaneesh.ramprasad@oracle.com",
+              			"hiredt" : "2014-07-18",
+                         "salary" : "4000",
+                      },
+                      {
+                         "id": 101,
+                         "firstname": "Vishal",
+                         "lastname": "Sharma",
+                         "email" : "vishal.x.sharma@oracle.com",
+              			"hiredt" : "2010-02-10",
+                         "salary" : "5000",
+                      },
+              		{
+                         "id": 102,
+                         "firstname": "John",
+                         "lastname": "Smith",
+                         "email" : "john.smith@oracle.com",
+              			"hiredt" : "2000-01-11",
+                         "salary" : "2000",
+                      },
+                     ]
+                }
